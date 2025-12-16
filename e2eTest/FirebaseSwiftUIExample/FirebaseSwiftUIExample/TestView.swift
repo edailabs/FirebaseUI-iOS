@@ -57,7 +57,7 @@ struct TestView: View {
     )
 
     let args = ProcessInfo.processInfo.arguments
-    
+
     // Configure providers based on launch arguments
     if args.contains("--no-providers") {
       // No providers enabled - just base AuthService
