@@ -67,7 +67,6 @@ public struct AuthTextField<Leading: View>: View {
 
   public var body: some View {
     VStack(alignment: .leading) {
-      Text(LocalizedStringResource(stringLiteral: label))
       HStack(spacing: 8) {
         leading()
         Group {

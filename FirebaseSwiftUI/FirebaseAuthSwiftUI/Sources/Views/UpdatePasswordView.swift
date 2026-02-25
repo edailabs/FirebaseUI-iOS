@@ -36,6 +36,8 @@ public struct UpdatePasswordView {
   @State private var reauthCoordinator = ReauthenticationCoordinator()
 
   @FocusState private var focus: FocusableField?
+    
+  public init() {}
 
   private var isValid: Bool {
     FormValidators.atLeast6Characters.isValid(input: password) &&

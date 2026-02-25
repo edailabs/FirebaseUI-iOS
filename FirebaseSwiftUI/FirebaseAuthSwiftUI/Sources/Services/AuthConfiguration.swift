@@ -33,6 +33,10 @@ public struct AuthConfiguration {
   public let mfaEnabled: Bool
   public let allowedSecondFactors: Set<SecondFactorType>
   public let mfaIssuer: String
+  public let forgotPasswordLabel: String
+  public let emailInputLabel: String
+  public let passwordInputLabel: String
+  public let signInLabel: String
 
   public init(logo: ImageResource? = nil,
               languageCode: String? = nil,
@@ -46,7 +50,11 @@ public struct AuthConfiguration {
               verifyEmailActionCodeSettings: ActionCodeSettings? = nil,
               mfaEnabled: Bool = false,
               allowedSecondFactors: Set<SecondFactorType> = [.sms, .totp],
-              mfaIssuer: String = "Firebase Auth") {
+              mfaIssuer: String = "Firebase Auth",
+              forgotPasswordLabel: String = "",
+              emailInputLabel: String = "",
+              passwordInputLabel: String = "",
+              signInLabel: String = "") {
     self.logo = logo
     self.shouldHideCancelButton = shouldHideCancelButton
     self.interactiveDismissEnabled = interactiveDismissEnabled
@@ -60,5 +68,9 @@ public struct AuthConfiguration {
     self.mfaEnabled = mfaEnabled
     self.allowedSecondFactors = allowedSecondFactors
     self.mfaIssuer = mfaIssuer
+    self.forgotPasswordLabel = forgotPasswordLabel
+    self.emailInputLabel = emailInputLabel
+    self.passwordInputLabel = passwordInputLabel
+    self.signInLabel = signInLabel
   }
 }

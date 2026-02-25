@@ -18,7 +18,7 @@ import FirebaseCore
 import SwiftUI
 
 @MainActor
-struct EnterVerificationCodeView: View {
+public struct EnterVerificationCodeView: View {
   @Environment(AuthService.self) private var authService
   @Environment(\.accountConflictHandler) private var accountConflictHandler
   @Environment(\.reportError) private var reportError
@@ -27,7 +27,12 @@ struct EnterVerificationCodeView: View {
   let verificationID: String
   let fullPhoneNumber: String
 
-  var body: some View {
+  public init(verificationID: String, fullPhoneNumber: String) {
+    self.verificationID = verificationID
+    self.fullPhoneNumber = fullPhoneNumber
+  }
+
+  public var body: some View {
     @Bindable var authService = authService
     VStack(spacing: 32) {
       VStack(spacing: 16) {

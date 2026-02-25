@@ -35,7 +35,7 @@ public class GoogleProviderSwift: CredentialAuthProviderSwift {
 
   @MainActor public func createAuthCredential() async throws -> AuthCredential {
     guard let presentingViewController = await (UIApplication.shared.connectedScenes
-      .first as? UIWindowScene)?.windows.first?.rootViewController else {
+        .first as? UIWindowScene)?.windows.first(where: { $0.isKeyWindow })?.rootViewController else {
       throw AuthServiceError
         .rootViewControllerNotFound(
           "Root View controller is not available to present Google sign-in View."

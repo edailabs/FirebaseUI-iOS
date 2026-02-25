@@ -48,7 +48,7 @@ extension View {
   /// Adds MFA handling to the view hierarchy
   /// Should be applied at the NavigationStack level to handle MFA requirements throughout the auth
   /// flow
-  func mfaHandler() -> some View {
+  public func mfaHandler() -> some View {
     modifier(MFAHandlerModifier())
   }
 }

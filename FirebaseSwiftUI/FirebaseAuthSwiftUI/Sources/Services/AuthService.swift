@@ -88,7 +88,7 @@ private final class AuthListenerManager {
 
 @Observable
 public class Navigator {
-  var routes: [AuthView] = []
+  public var routes: [AuthView] = []
 
   public func push(_ route: AuthView) {
     routes.append(route)
@@ -130,7 +130,7 @@ public final class AuthService {
   private var currentMFAResolver: MultiFactorResolver?
   private var listenerManager: AuthListenerManager?
   private var emailLinkSignInCallback: (() -> Void)?
-  private var providers: [AuthProviderUI] = []
+  public var providers: [AuthProviderUI] = []
 
   public let configuration: AuthConfiguration
   public let auth: Auth
@@ -142,6 +142,10 @@ public final class AuthService {
   public var emailPasswordSignInEnabled = false
   public var emailLinkSignInEnabled = false
   public private(set) var navigator = Navigator()
+    
+    public var passwordInputLabel: String {
+        configuration.passwordInputLabel
+    }
 
   public var authView: AuthView? {
     navigator.routes.last

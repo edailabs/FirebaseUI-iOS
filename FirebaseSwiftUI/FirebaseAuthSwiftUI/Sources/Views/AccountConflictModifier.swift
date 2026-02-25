@@ -103,7 +103,7 @@ struct AccountConflictModifier: ViewModifier {
 extension View {
   /// Adds account conflict handling to the view hierarchy
   /// Should be applied at the NavigationStack level to handle conflicts throughout the auth flow
-  func accountConflictHandler() -> some View {
+  public func accountConflictHandler() -> some View {
     modifier(AccountConflictModifier())
   }
 }

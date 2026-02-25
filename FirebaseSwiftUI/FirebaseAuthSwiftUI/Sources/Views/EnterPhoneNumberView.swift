@@ -17,13 +17,15 @@ import FirebaseAuthUIComponents
 import FirebaseCore
 import SwiftUI
 
-struct EnterPhoneNumberView: View {
+public struct EnterPhoneNumberView: View {
   @Environment(AuthService.self) private var authService
   @Environment(\.reportError) private var reportError
   @State private var phoneNumber: String = ""
   @State private var selectedCountry: CountryData = .default
+    
+  public init() {}
 
-  var body: some View {
+  public var body: some View {
     VStack(spacing: 16) {
       Text(authService.string.enterPhoneNumberPlaceholder)
         .font(.subheadline)

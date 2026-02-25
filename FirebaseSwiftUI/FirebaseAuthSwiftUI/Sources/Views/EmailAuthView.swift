@@ -116,17 +116,17 @@ extension EmailAuthView: View {
         maintainsValidationMessage: authService.authenticationFlow == .signUp,
         onSubmit: { _ in
           self.focus = .password
-        },
+        }/*,
         leading: {
           Image(systemName: "at")
-        }
+        }*/
       )
       .focused($focus, equals: .email)
       .accessibilityIdentifier("email-field")
       AuthTextField(
         text: $password,
         label: authService.string.passwordFieldLabel,
-        prompt: authService.string.passwordInputLabel,
+        prompt: authService.passwordInputLabel, /*authService.string.passwordInputLabel,*/
         contentType: .password,
         isSecureTextField: true,
         validations: authService.authenticationFlow == .signUp ? [
@@ -135,10 +135,10 @@ extension EmailAuthView: View {
         maintainsValidationMessage: authService.authenticationFlow == .signUp,
         onSubmit: { _ in
           Task { try await signInWithEmailPassword() }
-        },
+        }/*,
         leading: {
           Image(systemName: "lock")
-        }
+        }*/
       )
       .submitLabel(.go)
       .focused($focus, equals: .password)
