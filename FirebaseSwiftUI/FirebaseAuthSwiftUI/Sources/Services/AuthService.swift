@@ -142,6 +142,7 @@ public final class AuthService {
   public var emailPasswordSignInEnabled = false
   public var emailLinkSignInEnabled = false
   public private(set) var navigator = Navigator()
+  public var providerDisplayName: String? = nil
     
     public var passwordInputLabel: String {
         configuration.passwordInputLabel
