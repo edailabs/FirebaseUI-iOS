@@ -24,7 +24,7 @@ public struct PasswordRecoveryView {
 
   public init() {}
 
-  private func sendPasswordRecoveryEmail() async {
+  @MainActor private func sendPasswordRecoveryEmail() async {
     do {
       try await authService.sendPasswordRecoveryEmail(email: email)
       sentEmail = email
@@ -106,3 +106,4 @@ extension PasswordRecoveryView: View {
   return PasswordRecoveryView()
     .environment(AuthService())
 }
+
